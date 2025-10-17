@@ -10,10 +10,10 @@ const initialState: TodoState = {
 
 export const todoReducer = createReducer(
   initialState,
-  on(TodoActions.createTodo, (state, action) => {
+  on(TodoActions.createTodo, (state, { id, title, completed }) => {
     return {
       ...state,
-      todos: [...state.todos, action]
+      todos: [...state.todos, { id, title, completed }]
     };
   })
 );

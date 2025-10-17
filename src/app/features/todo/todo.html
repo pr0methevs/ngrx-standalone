@@ -1,4 +1,6 @@
 <h1>Todos List</h1>
+<input [(ngModel)]="newTodoTitle" placeholder="Add new todo" />
+<button (click)="addTodo()">Add Todo</button>
 @if (todos$ | async; as todos) {
   @if (todos.length > 0) {
     <ul>
