@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { TodoModel } from './models/todo.model';
 import { selectAllTodos } from './features/todo/state/todo.selectors';
 import { CommonModule } from '@angular/common';
-import { Todo } from './features/todo/todo';
+import { Todo } from './features/todo/todo.component';
 
 @Component({
   selector: 'app-root',
@@ -20,10 +20,13 @@ import { Todo } from './features/todo/todo';
 })
 export class App {
   todos$!: Observable<TodoModel[]>;
+  appState$!: Observable<any>;
+
 
   protected readonly title = signal('ngrx-standalone');
 
   constructor(private store: Store) {
     this.todos$ = this.store.select(selectAllTodos);
+    this.appState$ = this.store.select(state => state);
   }
 }

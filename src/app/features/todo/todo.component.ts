@@ -9,12 +9,12 @@ import { createTodo } from './state/todo.actions';
 
 @Component({
   selector: 'app-todo',
-    imports: [
-        AsyncPipe,
-        FormsModule
-    ],
-  templateUrl: './todo.html',
-  styleUrl: './todo.css'
+  imports: [
+    AsyncPipe,
+    FormsModule
+  ],
+  templateUrl: './todo.component.html',
+  styleUrl: './todo.component.css'
 })
 export class Todo {
   todos$!: Observable<TodoModel[]>;
